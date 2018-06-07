@@ -14,15 +14,22 @@ class ViewController: UIViewController {
     // first one is internal name
     // second one is exeternal name
     
+    var flipCount = 0
+    
+    @IBOutlet weak var flipCountLabel: UILabel!
+    
     @IBAction func touchCard(_ sender: UIButton)  {
+        flipCount += 1
+        flipCountLabel.text = "Flips: \(flipCount)"
         flipCard(withEmoji: "👻", on: sender)
     }
     @IBAction func touchSecondCard(_ sender: UIButton) {
+        flipCount += 1
+        flipCountLabel.text = "Flips: \(flipCount)"
         flipCard(withEmoji: "🎃", on: sender)
     }
     
     func flipCard(withEmoji emoji: String, on button: UIButton) {
-        print("flipCard(withEmoji: \(emoji)")
         if button.currentTitle == emoji {
             button.setTitle("", for: UIControlState.normal)
             button.backgroundColor = #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
