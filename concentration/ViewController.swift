@@ -24,12 +24,9 @@ class ViewController: UIViewController {
     
     @IBAction func touchCard(_ sender: UIButton)  {
         flipCount += 1
-        flipCard(withEmoji: "👻", on: sender)
+
     }
-    @IBAction func touchSecondCard(_ sender: UIButton) {
-        flipCount += 1
-        flipCard(withEmoji: "🎃", on: sender)
-    }
+
     
     func flipCard(withEmoji emoji: String, on button: UIButton) {
         if button.currentTitle == emoji {
