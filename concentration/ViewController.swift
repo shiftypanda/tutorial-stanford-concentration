@@ -25,8 +25,11 @@ class ViewController: UIViewController {
     
     @IBAction func touchCard(_ sender: UIButton)  {
         flipCount += 1
-        let cardNumber = cardButtons.index(of: sender)!
+        if let cardNumber = cardButtons.index(of: sender) {
         print("cardNumber = \(cardNumber)")
+        } else {
+            print("Chosen card was not in cardButtons")
+        }
     }
 
     
